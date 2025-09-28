@@ -584,8 +584,3 @@
   }
   const game = new Game();
 
-  setTimeout(()=>{
-    document.querySelectorAll("a")[0].remove();
-    document.querySelector("div").remove();
-},1100)
-
