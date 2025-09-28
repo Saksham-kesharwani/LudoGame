@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo Game</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="website icon" type="png"href="data:image/png;base64,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">
+<script defer data-domain="playludogame.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><script defer data-domain="playludogame.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><script defer data-domain="playludogame.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><script defer data-domain="playludogame.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
+
+<body>
+  <div class="all">
+    <div class="Myname">Made By ✨<a
+        href="https://www.instagram.com/sakshamkesharwani.10?igsh=MWZ3Z3UzZTdxbzA4Zg==">Saksham Kesharwani</a>✨</div>
+    <div class="popup">
+      <div class="input">
+        <div class="count">
+          Select Players!
+          <button id="2P">2 Players</button>
+          <button id="3P">3 Players</button>
+          <button id="4P">4 Players</button>
+        </div>
+      </div>
+    </div>
+    <div class="board">
+      <div class="dice1"></div>
+      <div class="dice2"></div>
+      <div class="dice3"></div>
+      <div class="dice4"></div>
+      <div class="gameBoard">
+        <div class="red-home">
+          <div class="cont">
+            <div class="redT"></div>
+            <div class="redT"></div>
+            <div class="redT"></div>
+            <div class="redT"></div>
+          </div>
+          <div class="redName"></div>
+        </div>
+        <div class="blue-home">
+          <div class="cont">
+            <div class="blueT"></div>
+            <div class="blueT"></div>
+            <div class="blueT"></div>
+            <div class="blueT"></div>
+          </div>
+          <div class="blueName"></div>
+        </div>
+        <div class="green-home">
+          <div class="cont">
+            <div class="greenT"></div>
+            <div class="greenT"></div>
+            <div class="greenT"></div>
+            <div class="greenT"></div>
+          </div>
+          <div class="greenName"></div>
+        </div>
+        <div class="yellow-home">
+          <div class="cont">
+            <div class="yellowT"></div>
+            <div class="yellowT"></div>
+            <div class="yellowT"></div>
+            <div class="yellowT"></div>
+          </div>
+          <div class="yellowName"></div>
+        </div>
+        <div class="cell" b="24" y="37" g="50" r="11"></div>
+        <div class="cell" b="25" y="38" g="51" r="12"></div>
+        <div class="cell" b="26" y="39" g="" r="13"></div>
+        <div class="cell" b="23" y="36" g="49" r="10">
+        </div>
+        <div class="cell" b="" y="" g="52" r="" style="background-color: #009A2A;"></div>
+        <div class="cell stop" b="27" y="40" g="1" r="14" style="background-color: #009A2A;"></div>
+        <div class="cell stop" b="22" y="35" g="48" r="9">
+          <div class="star green"></div>
+        </div>
+        <div class="cell" b="" y="" g="53" r="" style="background-color: #009A2A;">
+
+        </div>
+        <div class="cell" b="28" y="41" g="2" r="15">
+        </div>
+        <div class="cell" b="21" y="34" g="47" r="8"></div>
+        <div class="cell" b="" y="" g="54" r="" style="background-color: #009A2A;"></div>
+        <div class="cell" b="29" y="42" g="3" r="16"></div>
+        <div class="cell" b="20" y="33" g="46" r="7"></div>
+        <div class="cell" b="" y="" g="55" r="" style="background-color: #009A2A;"></div>
+        <div class="cell" b="30" y="43" g="4" r="17"></div>
+        <div class="cell" b="19" y="32" g="45" r="6"></div>
+        <div class="cell" b="" y="" g="56" r="" style="background-color: #009A2A;"></div>
+        <div class="cell" b="31" y="44" g="5" r="18"></div>
+        <div class="cell" b="13" y="26" g="39" r=""></div>
+        <div class="cell stop" b="14" y="27" g="40" r="1" style="background-color: #FD0100;"></div>
+        <div class="cell" b="15" y="28" g="41" r="2"></div>
+        <div class="cell" b="16" y="29" g="42" r="3"></div>
+        <div class="cell" b="17" y="30" g="43" r="4"></div>
+        <div class="cell" b="18" y="31" g="44" r="5"></div>
+        <div class="cell" b="32" y="45" g="6" r="19"></div>
+        <div class="cell" b="33" y="46" g="7" r="20"></div>
+        <div class="cell" b="34" y="47" g="8" r="21"></div>
+        <div class="cell stop" b="35" y="48" g="9" r="22">
+          <div class="star yellow"></div>
+        </div>
+        <div class="cell" b="36" y="49" g="10" r="23"></div>
+        <div class="cell" b="37" y="50" g="11" r="24"></div>
+        <div class="cell" b="12" y="25" g="38" r="51"></div>
+        <div class="cell" b="" y="" g="" r="52" style="background-color: #FD0100;"></div>
+        <div class="cell" b="" y="" g="" r="53" style="background-color: #FD0100;"></div>
+        <div class="cell" b="" y="" g="" r="54" style="background-color: #FD0100;"></div>
+        <div class="cell" b="" y="" g="" r="55" style="background-color: #FD0100;"></div>
+        <div class="cell" b="" y="" g="" r="56" style="background-color: #FD0100;"></div>
+        <div class="cell" b="" y="56" g="" r="" style="background-color: #FEE800;"></div>
+        <div class="cell" b="" y="55" g="" r="" style="background-color: #FEE800;"></div>
+        <div class="cell" b="" y="54" g="" r="" style="background-color: #FEE800;"></div>
+        <div class="cell" b="" y="53" g="" r="" style="background-color: #FEE800;"></div>
+        <div class="cell" b="" y="52" g="" r="" style="background-color: #FEE800;"></div>
+        <div class="cell" b="38" y="51" g="12" r="25"></div>
+        <div class="cell" b="11" y="24" g="37" r="50"></div>
+        <div class="cell" b="10" y="23" g="36" r="49"></div>
+        <div class="cell stop" b="9" y="22" g="35" r="48">
+          <div class="star red"></div>
+        </div>
+        <div class="cell" b="8" y="21" g="34" r="47"></div>
+        <div class="cell" b="7" y="20" g="33" r="46"></div>
+        <div class="cell" b="6" y="19" g="32" r="45"></div>
+        <div class="cell" b="44" y="5" g="18" r="31"></div>
+        <div class="cell" b="43" y="4" g="17" r="30"></div>
+        <div class="cell" b="42" y="3" g="16" r="29"></div>
+        <div class="cell" b="41" y="2" g="15" r="28"></div>
+        <div class="cell stop" b="40" y="1" g="14" r="27" style="background-color: #FEE800;"></div>
+        <div class="cell" b="39" y="" g="13" r="26"></div>
+        <div class="cell" b="5" y="18" g="31" r="44"></div>
+        <div class="cell" b="56" y="" g="" r="" style="background-color: #00ACFF;"></div>
+        <div class="cell" b="45" y="6" g="19" r="32"></div>
+        <div class="cell" b="4" y="17" g="30" r="43"></div>
+        <div class="cell" b="55" y="" g="" r="" style="background-color: #00ACFF;"></div>
+        <div class="cell" b="46" y="7" g="20" r="33"></div>
+        <div class="cell" b="3" y="16" g="29" r="42"></div>
+        <div class="cell" b="54" y="" g="" r="" style="background-color: #00ACFF;"></div>
+        <div class="cell" b="47" y="8" g="21" r="34"></div>
+        <div class="cell" b="2" y="15" g="28" r="41"></div>
+        <div class="cell" b="53" y="" g="" r="" style="background-color: #00ACFF;"></div>
+        <div class="cell stop" b="48" y="9" g="22" r="35">
+          <div class="star blue"></div>
+        </div>
+        <div class="cell stop" b="1" y="14" g="27" r="40" style="background-color: #00ACFF;"></div>
+        <div class="cell" b="52" y="" g="" r="" style="background-color: #00ACFF;"></div>
+        <div class="cell" b="49" y="10" g="23" r="36"></div>
+        <div class="cell" b="" y="13" g="26" r="39"></div>
+        <div class="cell" b="51" y="12" g="25" r="38"></div>
+        <div class="cell" b="50" y="11" g="24" r="37"></div>
+        <div class="center"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="app.js"></script>
+
+</html>

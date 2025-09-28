@@ -1,0 +1,735 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: blue;
+      font-weight: 900;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .Myname {
+      position: absolute;
+      width: 100%;
+      height: fit-content;
+      font-size: auto;
+      top: 0;
+      z-index: 9999;
+      background-color: White;
+      text-align: center;
+    }
+
+    .all {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body {
+      background-color: cornsilk;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: auto;
+    }
+
+    .board {
+      display: grid;
+      height: 100vh;
+      aspect-ratio: 21/15;
+      grid-template-columns: 3fr 15fr 3fr;
+      grid-template-rows: 3fr 9fr 3fr;
+      margin: auto;
+      background-color: cornsilk;
+    }
+
+    .gameBoard {
+      grid-row-start: 1;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      border: 0.5px solid black;
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+      grid-template-rows: repeat(15, 1fr);
+      background-color: white;
+    }
+
+    .dice4 {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .dice3 {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+
+    .dice1 {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .dice2 {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+
+    .dice1,
+    .dice2,
+    .dice3,
+    .dice4 {
+      background: radial-gradient(circle,rgba(66, 129, 161, 1) 0%, rgba(15, 77, 70, 1) 100%);
+      border: 1px solid black;
+      perspective: 1600px;
+      cursor: pointer;
+      z-index: 40;
+      position: relative;
+      overflow: -moz-hidden-unscrollable;
+    }
+
+    .arrow1,
+    .arrow2,
+    .arrow3,
+    .arrow4 {
+      background-color: purple;
+      height: 80%;
+      width: 80%;
+      margin: 10%;
+      position: absolute;
+      clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    }
+
+    .arrow1,
+    .arrow2 {
+      transform: rotateZ(-90deg);
+      top: -100%;
+      animation: landArr12 0.4s infinite;
+    }
+
+    .arrow3,
+    .arrow4 {
+      transform: rotateZ(90deg);
+      bottom: -92%;
+      animation: landArr34 0.4s infinite;
+    }
+
+    .dice1,
+    .dice4 {
+      border-right: none;
+    }
+
+    .dice2,
+    .dice3 {
+      border-left: none;
+    }
+
+    .red-home {
+      grid-row-start: 1;
+      grid-row-end: 7;
+      grid-column-start: 1;
+      grid-column-end: 7;
+      background-color: #fd0100;
+    }
+
+    .green-home {
+      grid-row-start: 1;
+      grid-row-end: 7;
+      grid-column-start: 10;
+      grid-column-end: 16;
+      background-color: #009a2a;
+    }
+
+    .yellow-home {
+      grid-row-start: 10;
+      grid-row-end: 16;
+      grid-column-start: 10;
+      grid-column-end: 16;
+      background-color: #fee800;
+    }
+
+    .blue-home {
+      grid-row-start: 10;
+      grid-row-end: 16;
+      grid-column-start: 1;
+      grid-column-end: 7;
+      background-color: #00acff;
+    }
+
+    .cell {
+      border: 0.5px solid black;
+      background-color: white;
+      position: relative;
+    }
+
+    .red-home,
+    .blue-home,
+    .green-home,
+    .yellow-home {
+      border: 0.5px solid black;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .center {
+      grid-row-start: 7;
+      grid-row-end: 10;
+      grid-column-start: 7;
+      grid-column-end: 10;
+      border: 0.5px solid black;
+      background: conic-gradient(from -45deg,
+          #009a2a 0deg,
+          #009a2a 90deg,
+          #fee800 90deg,
+          #fee800 180deg,
+          #00acff 180deg,
+          #00acff 270deg,
+          #fd0100 270deg);
+    }
+
+    .redT {
+      background-color: #fd0100;
+    }
+
+    .blueT {
+      background-color: #00acff;
+    }
+
+    .greenT {
+      background-color: #009a2a;
+    }
+
+    .yellowT {
+      background-color: #fee800;
+    }
+
+    .cont {
+      aspect-ratio: 1;
+      height: 72%;
+      margin: 14%;
+      background-color: white;
+      border-radius: 3%;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid black;
+    }
+
+    .redT,
+    .blueT,
+    .greenT,
+    .yellowT {
+      height: 22.8%;
+      aspect-ratio: 1;
+      margin: 13.6%;
+      display: inline-block;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .redName,
+    .blueName,
+    .greenName,
+    .yellowName {
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      width: 100%;
+      margin: 2%;
+      font-size: 3vh;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
+    .token {
+      width: 78%;
+      aspect-ratio: 34/45;
+      position: absolute;
+      bottom: 50%;
+      left: 11%;
+      z-index: 10;
+      transition: transform 0.3s;
+    }
+
+    .goingHome {
+      transition: transform 0.1s;
+    }
+
+    .triangle {
+      bottom: 0;
+      left: 9.6%;
+      width: 80.8%;
+      height: 40%;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+
+    .circle {
+      width: 100%;
+      aspect-ratio: 1;
+      clip-path: circle(50% at center);
+      top: 0;
+    }
+
+    .triangle,
+    .circle {
+      position: absolute;
+      background-color: rgb(205 201 216);
+    }
+
+    .innerCircle {
+      width: 100%;
+      aspect-ratio: 1;
+      clip-path: circle(35% at center);
+    }
+
+    .red {
+      background-color: #fd0100;
+    }
+
+    .blue {
+      background-color: #00acff;
+    }
+
+    .green {
+      background-color: #009a2a;
+    }
+
+    .yellow {
+      background-color: #fee800;
+    }
+
+    .star {
+      height: 90%;
+      margin: 5%;
+      aspect-ratio: 1;
+      clip-path: polygon(50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%);
+    }
+
+    .dice {
+      height: 80%;
+      margin: 10%;
+      aspect-ratio: 1;
+      transform-style: preserve-3d;
+      transition: 2s cubic-bezier(0, 0.06, 0, 1);
+    }
+
+    .c {
+      background-color: black;
+      clip-path: circle(30%);
+    }
+
+    .face {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      background-color: rgb(205, 198, 198);
+    }
+
+    .one {
+      transform: translateZ(-7.9vh);
+    }
+
+    .six {
+      transform: translateZ(7.9vh);
+    }
+
+    .four {
+      transform: rotateY(90deg) translateZ(7.9vh);
+    }
+
+    .three {
+      transform: rotateY(-90deg) translateZ(7.9vh);
+    }
+
+    .five {
+      transform: rotateX(90deg) translateZ(7.9vh);
+    }
+
+    .two {
+      transform: rotateX(-90deg) translateZ(7.9vh);
+    }
+
+    .popup {
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.821);
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+    }
+
+    .input {
+      aspect-ratio: 3/4;
+      height: 60vh;
+      background-color: rgb(157, 186, 188);
+      border-radius: 5%;
+      border: 2px solid black;
+    }
+
+    .count {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      font-size: 5vh;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      color: darkblue;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+    }
+
+    button {
+      width: 80%;
+      background-color: #4B0082;
+      color: aliceblue;
+      font-size: 5vh;
+      font-family: sans-serif;
+      border-radius: 10px;
+      font-weight: 800;
+      padding: 3%;
+      transition: 0.13s transform;
+      border: none;
+    }
+
+    #nxt {
+      background-color: #fe00cf;
+      color: white;
+      width: 40%;
+      font-size: 3vh;
+      transition: none;
+    }
+
+    #nxt:hover {
+      border: 2px solid rgb(0, 0, 0);
+    }
+
+    button:hover {
+      background-color: #1E1E1E;
+      transform: scale(0.98);
+    }
+
+    input {
+      height: 10%;
+      width: 80%;
+      border: none;
+      border-radius: 10px;
+      font-size: 3vh;
+      padding: 5%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    input::placeholder {
+      color: rgba(0, 0, 0, 0.501);
+    }
+
+    .name {
+      height: 100%;
+      width: 100%;
+    }
+
+    .buttons {
+      width: 100%;
+      height: auto;
+    }
+
+    .wonOne {
+      clip-path: polygon(45% 28%, 30% 32%, 30% 22%, 55% 16%, 56% 76%, 71% 76%, 71% 85%, 30% 85%, 30% 76%, 45% 76%);
+    }
+
+    .wonTwo {
+      clip-path: polygon(42% 33%, 30% 33%, 30% 9%, 67% 9%, 67% 33%, 44% 76%, 68% 76%, 68% 87%, 28% 87%, 29% 79%, 55% 33%, 55% 19%, 42% 19%);
+    }
+
+    .wonThree {
+      clip-path: polygon(42% 36%, 29% 36%, 29% 11%, 68% 11%, 68% 41%, 57% 49%, 68% 59%, 68% 91%, 29% 91%, 29% 63%, 42% 63%, 42% 79%, 56% 79%, 56% 60%, 40% 49%, 56% 38%, 56% 22%, 42% 22%);
+    }
+
+    .wonFour {
+      clip-path: polygon(44% 8%, 58% 8%, 39% 63%, 50% 63%, 50% 39%, 63% 39%, 63% 63%, 69% 63%, 69% 75%, 63% 75%, 63% 90%, 50% 90%, 50% 75%, 23% 75%, 23% 66%);
+    }
+
+    .wonOne,
+    .wonTwo,
+    .wonThree,
+    .wonFour {
+      height: 100%;
+      width: 100%;
+      background-color: purple;
+    }
+    
+    @media (orientation: portrait) {
+      .board {
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 15/21;
+        grid-template-columns: 3fr 9fr 3fr;
+        grid-template-rows: 3fr 15fr 3fr;
+      }
+
+      .gameBoard {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+
+      .dice1,
+      .dice2,
+      .dice3,
+      .dice4 {
+        border: 1px solid black;
+      }
+
+      .dice1,
+      .dice2 {
+        border-top: none;
+      }
+
+      .dice3,
+      .dice4 {
+        border-bottom: none;
+      }
+
+      .redName,
+      .blueName,
+      .greenName,
+      .yellowName {
+        font-size: 2.5vw;
+      }
+
+      .one {
+        transform: translateZ(-7.9vw);
+      }
+
+      .six {
+        transform: translateZ(7.9vw);
+      }
+
+      .four {
+        transform: rotateY(90deg) translateZ(7.9vw);
+      }
+
+      .three {
+        transform: rotateY(-90deg) translateZ(7.9vw);
+      }
+
+      .five {
+        transform: rotateX(90deg) translateZ(7.9vw);
+      }
+
+      .two {
+        transform: rotateX(-90deg) translateZ(7.9vw);
+      }
+
+      .arrow1,
+      .arrow4 {
+        transform: none;
+        right: -92%;
+        bottom: 0;
+        top: 0;
+        animation: portdArr14 0.4s infinite;
+      }
+
+      .arrow2,
+      .arrow3 {
+        transform: rotateZ(-180deg);
+        left: -92%;
+        bottom: 0;
+        top: 0;
+        animation: portdArr23 0.4s infinite;
+      }
+    }
+
+    @media (orientation: landscape) and (max-aspect-ratio: 21/15) {
+      .board {
+        width: 100vw;
+        height: auto;
+      }
+
+      .one {
+        transform: translateZ(-5.48vw);
+      }
+
+      .six {
+        transform: translateZ(5.48vw);
+      }
+
+      .four {
+        transform: rotateY(90deg) translateZ(5.48vw);
+      }
+
+      .three {
+        transform: rotateY(-90deg) translateZ(5.48vw);
+      }
+
+      .five {
+        transform: rotateX(90deg) translateZ(5.48vw);
+      }
+
+      .two {
+        transform: rotateX(-90deg) translateZ(5.48vw);
+      }
+    }
+
+    @media (orientation: portrait) and (min-aspect-ratio: 15/21) {
+      .board {
+        height: 100vh;
+        width: auto;
+      }
+
+      .one {
+        transform: translateZ(-5.48vh);
+      }
+
+      .six {
+        transform: translateZ(5.48vh);
+      }
+
+      .four {
+        transform: rotateY(90deg) translateZ(5.48vh);
+      }
+
+      .three {
+        transform: rotateY(-90deg) translateZ(5.48vh);
+      }
+
+      .five {
+        transform: rotateX(90deg) translateZ(5.48vh);
+      }
+
+      .two {
+        transform: rotateX(-90deg) translateZ(5.48vh);
+      }
+    }
+
+    @keyframes blinkred {
+
+      0%,
+      100% {
+        background-color: #fd0100;
+      }
+
+      50% {
+        background-color: rgb(135, 0, 0);
+      }
+    }
+
+    @keyframes blinkblue {
+
+      0%,
+      100% {
+        background-color: #00acff;
+      }
+
+      50% {
+        background-color: rgb(0, 88, 135);
+      }
+    }
+
+    @keyframes blinkyellow {
+
+      0%,
+      100% {
+        background-color: #fee800;
+      }
+
+      50% {
+        background-color: #877b00;
+      }
+    }
+
+    @keyframes blinkgreen {
+
+      0%,
+      100% {
+        background-color: #009a2a;
+      }
+
+      50% {
+        background-color: #002f0c;
+      }
+    }
+
+    @keyframes landArr34 {
+
+      0%,
+      100% {
+        bottom: -92%;
+      }
+
+      50% {
+        bottom: -102%;
+      }
+    }
+
+    @keyframes landArr12 {
+
+      0%,
+      100% {
+        top: -92%;
+      }
+
+      50% {
+        top: -102%;
+      }
+    }
+
+    @keyframes portdArr14 {
+
+      0%,
+      100% {
+        right: -92%;
+      }
+
+      50% {
+        right: -102%;
+      }
+    }
+
+    @keyframes portdArr23 {
+
+      0%,
+      100% {
+        left: -92%;
+      }
+
+      50% {
+        left: -102%;
+      }
+    }
+  
